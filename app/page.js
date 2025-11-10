@@ -1,18 +1,27 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-black text-pink-500 p-10">
-      <h1 className="text-4xl font-bold mb-6">
-        Next-Gen Process Mapping & Fit-Gap in Minutes 🚀
-      </h1>
-      <p className="text-lg text-gray-300 max-w-2xl text-center">
-        Transform manual Fit-Gap workshops into a streamlined, AI-powered experience.
-      </p>
+"use client";
+import { useRouter } from "next/navigation";
 
-      <div className="mt-10 flex gap-4">
-        <button className="bg-pink-600 text-white px-6 py-3 rounded-xl hover:bg-pink-700">
+export default function Home() {
+  const router = useRouter();
+
+  return (
+    <main className="flex flex-col items-center justify-center min-h-screen bg-black text-white">
+      <h1 className="text-pink-500 text-4xl md:text-5xl font-bold mb-8 text-center">
+        Next-Gen Process Mapping & Fit-Gap in Minutes
+      </h1>
+
+      <div className="flex flex-col md:flex-row gap-4">
+        <button
+          onClick={() => router.push("/questionnaire")}
+          className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-lg font-semibold"
+        >
           Start Questionnaire
         </button>
-        <button className="border border-pink-600 text-pink-500 px-6 py-3 rounded-xl hover:bg-pink-600 hover:text-white">
+
+        <button
+          onClick={() => router.push("/matrix")}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold"
+        >
           View Sample Fit-Gap Matrix
         </button>
       </div>
