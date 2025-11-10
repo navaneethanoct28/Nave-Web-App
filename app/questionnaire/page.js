@@ -1,4 +1,9 @@
+"use client";
+import { useRouter } from "next/navigation";
+
 export default function QuestionnairePage() {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
       <h1 className="text-3xl font-bold mb-4 text-blue-700">
@@ -45,13 +50,23 @@ export default function QuestionnairePage() {
           </select>
         </div>
 
-        <button
-          type="button"
-          className="mt-6 bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-lg"
-          onClick={() => alert("Responses saved! (demo only)")}
-        >
-          Submit
-        </button>
+        <div className="flex items-center gap-4 mt-6">
+          <button
+            type="button"
+            onClick={() => alert("Responses saved! (Demo only)")}
+            className="bg-blue-700 hover:bg-blue-800 text-white px-5 py-2 rounded-lg"
+          >
+            Submit
+          </button>
+
+          <button
+            type="button"
+            onClick={() => router.push("/")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 px-5 py-2 rounded-lg"
+          >
+            Back to Home
+          </button>
+        </div>
       </form>
     </div>
   );
